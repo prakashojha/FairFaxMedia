@@ -15,6 +15,7 @@ struct RelatedImage: Decodable{
 }
 
 struct Asset: Decodable{
+    var articleURL: String?
     var headline: String?
     var abstract: String?
     var author: String?
@@ -22,6 +23,7 @@ struct Asset: Decodable{
     var timeStamp: Int?
     
     enum CodingKeys: String, CodingKey{
+        case articleURL = "url"
         case headline = "headline"
         case abstract = "theAbstract"
         case author = "byLine"
@@ -31,6 +33,7 @@ struct Asset: Decodable{
     
     func articleEntityDTO()->ArticleEntity{
         return ArticleEntity(
+            articleURL:  self.articleURL,
             headline: self.headline,
             abstract: self.abstract,
             author: self.author,
