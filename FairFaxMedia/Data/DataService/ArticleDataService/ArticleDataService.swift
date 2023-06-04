@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArticleDataService{
+class ArticleDataService: ArticleDataRepo{
     
     var remoteNetworkService: RemoteNetworkServiceRepo
     
