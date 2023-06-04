@@ -17,6 +17,6 @@ enum NetworkError: Error{
 }
 
 protocol RemoteNetworkServiceRepo{
-    func requestRemoteData<T:Decodable>() async throws -> Result<T, Error>
-    func fetchImage(from url: String) async throws -> Result<Data?, Error>
+    func requestRemoteData<T:Decodable>() async -> Result<T, Error>
+    func fetchImage(from url: String) async -> Result<Data?, Error>
 }
