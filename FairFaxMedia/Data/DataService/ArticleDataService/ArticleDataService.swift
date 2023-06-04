@@ -16,26 +16,32 @@ class ArticleDataService{
     }
     
     
-    func getArticleData() async throws{
-        do{
-            let result: Result<ArticleDataModel, Error> = try await remoteNetworkService.requestRemoteData()
-            switch(result){
-            case .success(let articleData):
-                await MainActor.run {
-                    print((articleData.assets?[0].relatedImages?[0].url ?? "Something went wrong"))
-                }
-               
-            case .failure(let error):
-                await MainActor.run {
-                    print(error.localizedDescription)
+    func getArticleData() async -> Result<[ArticleEntity], Error>{
+        var articleEntities: [ArticleEntity] = []
+        let result: Result<ArticleDataModel, Error> = await remoteNetworkService.requestRemoteData()
+        switch(result){
+        case .success(let articleData):
+            if let assets = articleData.assets{
+                for asset in assets{
+                    articleEntities.append(asset.articleEntityDTO())
                 }
             }
-            
+            return .success(articleEntities)
+        case .failure(let error):
+            return .failure(error)
         }
     }
     
-    func getImagesForArticle(id: Int){
-        
+    func getArticleImage(from url: String) async -> Result<Data?, Error>{
+        let result: Result<Data?, Error> = await self.remoteNetworkService.fetchImage(from: url)
+        switch(result){
+        case .success(let data):
+            return .success(data)
+        case .failure(let error):
+            return .failure(error)
+        }
     }
     
 }
+
+

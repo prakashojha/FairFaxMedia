@@ -28,6 +28,17 @@ struct Asset: Decodable{
         case relatedImages = "relatedImages"
         case timeStamp = "timeStamp"
     }
+    
+    func articleEntityDTO()->ArticleEntity{
+        return ArticleEntity(
+            headline: self.headline,
+            abstract: self.abstract,
+            author: self.author,
+            articleImages: self.relatedImages.map { $0.map{image in
+                return ArticleImage.init(url: image.url, width: image.width, height: image.height, type: image.type)}
+            },
+            timeStamp: self.timeStamp )
+    }
 }
 
 struct ArticleDataModel: Decodable{
