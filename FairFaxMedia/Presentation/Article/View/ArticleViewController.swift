@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ArticleViewController: UIViewController {
     
@@ -69,10 +70,10 @@ class ArticleViewController: UIViewController {
     }
     
     func setupCollectionView(){
-       
+        
         collectionView.dataSource = self
         collectionView.delegate = self
-    
+        
         collectionView.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         self.view.addSubview(collectionView)
         
@@ -113,7 +114,7 @@ extension ArticleViewController: UICollectionViewDataSource{
         let cellForRow = viewModel.cellForAtRow(index: indexPath.row)
         cell.cellViewModel = cellForRow
         
-        Task{ 
+        Task{
             cell.imageData = await viewModel.getArticleImage(index: indexPath.row)
         }
         
@@ -123,6 +124,21 @@ extension ArticleViewController: UICollectionViewDataSource{
 
 extension ArticleViewController: UICollectionViewDelegate{
     
+    func loadWebpage(url: URL){
+        let config = SFSafariViewController.Configuration()
+        let safariViewController = SFSafariViewController(url: url, configuration: config)
+        safariViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(safariViewController, animated: true, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let urlString = viewModel.articleCellModels[indexPath.row].articleURL, let url = URL(string: urlString) else {
+            print("invalid url")
+            return
+        }
+        loadWebpage(url: url)
+       
+    }
 }
 
 extension ArticleViewController: UICollectionViewDelegateFlowLayout {
