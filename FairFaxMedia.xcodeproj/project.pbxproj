@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0650FF092A282CBB0009B956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF082A282CBB0009B956 /* AppDelegate.swift */; };
+		0650FF0B2A282CBB0009B956 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF0A2A282CBB0009B956 /* SceneDelegate.swift */; };
+		0650FF0D2A282CBB0009B956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF0C2A282CBB0009B956 /* ViewController.swift */; };
+		0650FF122A282CBC0009B956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0650FF112A282CBC0009B956 /* Assets.xcassets */; };
+		0650FF152A282CBC0009B956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0650FF132A282CBC0009B956 /* LaunchScreen.storyboard */; };
+		0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */; };
+		0650FF2A2A282CBD0009B956 /* FairFaxMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */; };
+		0650FF2C2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */; };
+		06B8720D2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8720C2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift */; };
+		06B8720F2A2C16C700C44703 /* RemoteNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8720E2A2C16C700C44703 /* RemoteNetworkService.swift */; };
+		06B872132A2C23B900C44703 /* ArticleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872122A2C23B900C44703 /* ArticleDataModel.swift */; };
+		06B872152A2C244700C44703 /* ArticleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872142A2C244700C44703 /* ArticleDataService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0650FF1C2A282CBD0009B956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0650FEFD2A282CBB0009B956 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0650FF042A282CBB0009B956;
+			remoteInfo = FairFaxMedia;
+		};
+		0650FF262A282CBD0009B956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0650FEFD2A282CBB0009B956 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0650FF042A282CBB0009B956;
+			remoteInfo = FairFaxMedia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0650FF052A282CBB0009B956 /* FairFaxMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairFaxMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0650FF082A282CBB0009B956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0650FF0A2A282CBB0009B956 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0650FF0C2A282CBB0009B956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0650FF112A282CBC0009B956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0650FF142A282CBC0009B956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0650FF162A282CBC0009B956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0650FF1B2A282CBD0009B956 /* FairFaxMediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FairFaxMediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaTests.swift; sourceTree = "<group>"; };
+		0650FF252A282CBD0009B956 /* FairFaxMediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FairFaxMediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITests.swift; sourceTree = "<group>"; };
+		0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		06B8720C2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkServiceRepo.swift; sourceTree = "<group>"; };
+		06B8720E2A2C16C700C44703 /* RemoteNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkService.swift; sourceTree = "<group>"; };
+		06B872122A2C23B900C44703 /* ArticleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataModel.swift; sourceTree = "<group>"; };
+		06B872142A2C244700C44703 /* ArticleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0650FF022A282CBB0009B956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF182A282CBD0009B956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF222A282CBD0009B956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0650FEFC2A282CBB0009B956 = {
+			isa = PBXGroup;
+			children = (
+				0650FF072A282CBB0009B956 /* FairFaxMedia */,
+				0650FF1E2A282CBD0009B956 /* FairFaxMediaTests */,
+				0650FF282A282CBD0009B956 /* FairFaxMediaUITests */,
+				0650FF062A282CBB0009B956 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0650FF062A282CBB0009B956 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF052A282CBB0009B956 /* FairFaxMedia.app */,
+				0650FF1B2A282CBD0009B956 /* FairFaxMediaTests.xctest */,
+				0650FF252A282CBD0009B956 /* FairFaxMediaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0650FF072A282CBB0009B956 /* FairFaxMedia */ = {
+			isa = PBXGroup;
+			children = (
+				06B872102A2C17C200C44703 /* Core */,
+				06B872052A2C139F00C44703 /* Resource */,
+				06B872042A2C138500C44703 /* App */,
+				06B1F39F2A2BEE9D00571B09 /* Data */,
+				06B1F39E2A2BEE9500571B09 /* Domain */,
+				06B1F39D2A2BEE8400571B09 /* Presentation */,
+				0650FF162A282CBC0009B956 /* Info.plist */,
+			);
+			path = FairFaxMedia;
+			sourceTree = "<group>";
+		};
+		0650FF1E2A282CBD0009B956 /* FairFaxMediaTests */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */,
+			);
+			path = FairFaxMediaTests;
+			sourceTree = "<group>";
+		};
+		0650FF282A282CBD0009B956 /* FairFaxMediaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */,
+				0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */,
+			);
+			path = FairFaxMediaUITests;
+			sourceTree = "<group>";
+		};
+		06B1F39D2A2BEE8400571B09 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				06B872062A2C13E600C44703 /* Article */,
+				06B872072A2C141100C44703 /* ArticleDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		06B1F39E2A2BEE9500571B09 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				06B872002A2C136500C44703 /* Repo */,
+				06B871FF2A2C135C00C44703 /* UseCase */,
+				06B871FE2A2C135500C44703 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		06B1F39F2A2BEE9D00571B09 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				06B871FD2A2C133D00C44703 /* DataService */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		06B871FC2A2C133000C44703 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				06B8720B2A2C167E00C44703 /* RemoteNetworkService */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		06B871FD2A2C133D00C44703 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				06B872112A2C239700C44703 /* ArticleDataService */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		06B871FE2A2C135500C44703 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		06B871FF2A2C135C00C44703 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		06B872002A2C136500C44703 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		06B872012A2C136C00C44703 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF0C2A282CBB0009B956 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06B872022A2C137200C44703 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06B872032A2C137900C44703 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06B872042A2C138500C44703 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF082A282CBB0009B956 /* AppDelegate.swift */,
+				0650FF0A2A282CBB0009B956 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		06B872052A2C139F00C44703 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0650FF132A282CBC0009B956 /* LaunchScreen.storyboard */,
+				0650FF112A282CBC0009B956 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		06B872062A2C13E600C44703 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				06B872012A2C136C00C44703 /* View */,
+				06B872022A2C137200C44703 /* ViewModel */,
+				06B872032A2C137900C44703 /* Model */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		06B872072A2C141100C44703 /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				06B8720A2A2C143400C44703 /* Model */,
+				06B872092A2C142E00C44703 /* ViewModel */,
+				06B872082A2C142700C44703 /* View */,
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		06B872082A2C142700C44703 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06B872092A2C142E00C44703 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06B8720A2A2C143400C44703 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06B8720B2A2C167E00C44703 /* RemoteNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				06B8720C2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift */,
+				06B8720E2A2C16C700C44703 /* RemoteNetworkService.swift */,
+			);
+			path = RemoteNetworkService;
+			sourceTree = "<group>";
+		};
+		06B872102A2C17C200C44703 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				06B871FC2A2C133000C44703 /* NetworkService */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		06B872112A2C239700C44703 /* ArticleDataService */ = {
+			isa = PBXGroup;
+			children = (
+				06B872122A2C23B900C44703 /* ArticleDataModel.swift */,
+				06B872142A2C244700C44703 /* ArticleDataService.swift */,
+			);
+			path = ArticleDataService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0650FF042A282CBB0009B956 /* FairFaxMedia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0650FF2F2A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMedia" */;
+			buildPhases = (
+				0650FF012A282CBB0009B956 /* Sources */,
+				0650FF022A282CBB0009B956 /* Frameworks */,
+				0650FF032A282CBB0009B956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FairFaxMedia;
+			productName = FairFaxMedia;
+			productReference = 0650FF052A282CBB0009B956 /* FairFaxMedia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0650FF1A2A282CBD0009B956 /* FairFaxMediaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0650FF322A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMediaTests" */;
+			buildPhases = (
+				0650FF172A282CBD0009B956 /* Sources */,
+				0650FF182A282CBD0009B956 /* Frameworks */,
+				0650FF192A282CBD0009B956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0650FF1D2A282CBD0009B956 /* PBXTargetDependency */,
+			);
+			name = FairFaxMediaTests;
+			productName = FairFaxMediaTests;
+			productReference = 0650FF1B2A282CBD0009B956 /* FairFaxMediaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0650FF242A282CBD0009B956 /* FairFaxMediaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0650FF352A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMediaUITests" */;
+			buildPhases = (
+				0650FF212A282CBD0009B956 /* Sources */,
+				0650FF222A282CBD0009B956 /* Frameworks */,
+				0650FF232A282CBD0009B956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0650FF272A282CBD0009B956 /* PBXTargetDependency */,
+			);
+			name = FairFaxMediaUITests;
+			productName = FairFaxMediaUITests;
+			productReference = 0650FF252A282CBD0009B956 /* FairFaxMediaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0650FEFD2A282CBB0009B956 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0650FF042A282CBB0009B956 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					0650FF1A2A282CBD0009B956 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 0650FF042A282CBB0009B956;
+					};
+					0650FF242A282CBD0009B956 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 0650FF042A282CBB0009B956;
+					};
+				};
+			};
+			buildConfigurationList = 0650FF002A282CBB0009B956 /* Build configuration list for PBXProject "FairFaxMedia" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0650FEFC2A282CBB0009B956;
+			productRefGroup = 0650FF062A282CBB0009B956 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0650FF042A282CBB0009B956 /* FairFaxMedia */,
+				0650FF1A2A282CBD0009B956 /* FairFaxMediaTests */,
+				0650FF242A282CBD0009B956 /* FairFaxMediaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0650FF032A282CBB0009B956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0650FF152A282CBC0009B956 /* LaunchScreen.storyboard in Resources */,
+				0650FF122A282CBC0009B956 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF192A282CBD0009B956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF232A282CBD0009B956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0650FF012A282CBB0009B956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0650FF0D2A282CBB0009B956 /* ViewController.swift in Sources */,
+				0650FF092A282CBB0009B956 /* AppDelegate.swift in Sources */,
+				06B8720F2A2C16C700C44703 /* RemoteNetworkService.swift in Sources */,
+				06B8720D2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift in Sources */,
+				06B872132A2C23B900C44703 /* ArticleDataModel.swift in Sources */,
+				06B872152A2C244700C44703 /* ArticleDataService.swift in Sources */,
+				0650FF0B2A282CBB0009B956 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF172A282CBD0009B956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0650FF212A282CBD0009B956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0650FF2A2A282CBD0009B956 /* FairFaxMediaUITests.swift in Sources */,
+				0650FF2C2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0650FF1D2A282CBD0009B956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0650FF042A282CBB0009B956 /* FairFaxMedia */;
+			targetProxy = 0650FF1C2A282CBD0009B956 /* PBXContainerItemProxy */;
+		};
+		0650FF272A282CBD0009B956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0650FF042A282CBB0009B956 /* FairFaxMedia */;
+			targetProxy = 0650FF262A282CBD0009B956 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0650FF132A282CBC0009B956 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0650FF142A282CBC0009B956 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0650FF2D2A282CBD0009B956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0650FF2E2A282CBD0009B956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0650FF302A282CBD0009B956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FairFaxMedia/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMedia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0650FF312A282CBD0009B956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FairFaxMedia/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMedia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0650FF332A282CBD0009B956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FairFaxMedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FairFaxMedia";
+			};
+			name = Debug;
+		};
+		0650FF342A282CBD0009B956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FairFaxMedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FairFaxMedia";
+			};
+			name = Release;
+		};
+		0650FF362A282CBD0009B956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FairFaxMedia;
+			};
+			name = Debug;
+		};
+		0650FF372A282CBD0009B956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P9FYU54DP6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FairFaxMedia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0650FF002A282CBB0009B956 /* Build configuration list for PBXProject "FairFaxMedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0650FF2D2A282CBD0009B956 /* Debug */,
+				0650FF2E2A282CBD0009B956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0650FF2F2A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0650FF302A282CBD0009B956 /* Debug */,
+				0650FF312A282CBD0009B956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0650FF322A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMediaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0650FF332A282CBD0009B956 /* Debug */,
+				0650FF342A282CBD0009B956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0650FF352A282CBD0009B956 /* Build configuration list for PBXNativeTarget "FairFaxMediaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0650FF362A282CBD0009B956 /* Debug */,
+				0650FF372A282CBD0009B956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0650FEFD2A282CBB0009B956 /* Project object */;
+}
