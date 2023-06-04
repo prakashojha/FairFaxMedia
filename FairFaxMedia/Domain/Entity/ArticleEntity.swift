@@ -22,6 +22,7 @@ struct ArticleImage{
 }
 
 struct ArticleEntity{
+    var articleURL: String?
     var headline: String?
     var abstract: String?
     var author: String?
