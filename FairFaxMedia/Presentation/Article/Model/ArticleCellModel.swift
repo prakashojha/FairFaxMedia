@@ -8,6 +8,7 @@
 import Foundation
 
 struct ArticleCellModel{
+    var articleURL: String?
     var headline: String?
     var abstract: String?
     var author: String?
