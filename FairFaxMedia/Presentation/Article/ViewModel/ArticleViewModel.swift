@@ -68,14 +68,15 @@ class ArticleViewModel{
         return imageData
     }
     
-    func formatDate(timeStamp: Int){
+    func formatDate(timeStamp: Int?) -> String?{
+        guard let timeStamp = timeStamp else { return nil }
         let timeInterval = TimeInterval(Double(timeStamp))
         let date = Date(timeIntervalSince1970: timeInterval / 1000)
         let dateFormater = DateFormatter()
-        dateFormater.timeStyle = .short
+        //dateFormater.timeStyle = .short
         dateFormater.dateStyle = .long
         dateFormater.timeZone = TimeZone(identifier: "Australia/Sydney")
-        let dateString = dateFormater.string(from: date)
+        return dateFormater.string(from: date)
        /// print(dateString)
     }
     
@@ -86,9 +87,9 @@ class ArticleViewModel{
             articleCellData.append(cellModel)
         }
         articleCellData.sort{ $0.timeStamp! > $1.timeStamp! }
-        articleCellData.forEach{
-            formatDate(timeStamp: $0.timeStamp!)
-        }
+//        articleCellData.forEach{
+//            formatDate(timeStamp: $0.timeStamp!)
+//        }
         return articleCellData
     }
     
@@ -100,6 +101,7 @@ class ArticleViewModel{
         cellModel.author = articleEntity.author
         cellModel.imageUrl = articleEntity.articleImages?.first(where: { $0.type == "thumbnail"})?.url ?? ""
         cellModel.timeStamp = articleEntity.timeStamp
+        cellModel.localPublishTime = formatDate(timeStamp: articleEntity.timeStamp)
         
         return cellModel
     }

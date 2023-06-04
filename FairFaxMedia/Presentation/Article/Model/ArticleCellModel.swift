@@ -14,5 +14,6 @@ struct ArticleCellModel{
     var author: String?
     var imageUrl: String?
     var timeStamp: Int?
+    var localPublishTime: String?
     
 }

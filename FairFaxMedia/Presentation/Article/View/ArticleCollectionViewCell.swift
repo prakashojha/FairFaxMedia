@@ -15,6 +15,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
                 self.headLine.text = cellViewModel?.headline
                 self.abstract.text = cellViewModel?.abstract
                 self.author.text = cellViewModel?.author
+                self.publishedAt.text = cellViewModel?.localPublishTime
             }
         }
     }
@@ -24,9 +25,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             if let imageData = imageData{
                 Task { @MainActor in
                     self.imageView.image = UIImage(data: imageData)
-                    //self.imageView.layoutIfNeeded()
                 }
-                
             }
         }
     }
@@ -53,7 +52,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         let abstract = UILabel()
         abstract.numberOfLines = 3
         abstract.textAlignment = .left
-        abstract.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        abstract.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         abstract.textColor = .white
         abstract.layer.zPosition = 2
         abstract.lineBreakMode = .byTruncatingTail
@@ -69,6 +68,15 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return author
     }()
     
+    private lazy var publishedAt: UILabel = {
+        let publishedAt = UILabel()
+        publishedAt.numberOfLines = 0
+        publishedAt.textAlignment = .right
+        publishedAt.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        publishedAt.textColor = .white
+        return publishedAt
+    }()
+    
     private lazy var transparentView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -78,7 +86,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //self.backgroundColor = UIColor(red: 22/255  , green: 166/255, blue: 104/255, alpha: 1)
         setupViews()
     }
     
@@ -92,6 +99,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         transparentView.addSubview(headLine)
         transparentView.addSubview(abstract)
         transparentView.addSubview(author)
+        transparentView.addSubview(publishedAt)
         imageView.layer.cornerRadius = 15
        
     }
@@ -107,6 +115,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         headLine.translatesAutoresizingMaskIntoConstraints = false
         abstract.translatesAutoresizingMaskIntoConstraints = false
         author.translatesAutoresizingMaskIntoConstraints = false
+        publishedAt.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
@@ -119,17 +128,25 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             transparentView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 0),
             transparentView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 0),
             
-            author.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
-            author.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
-            author.bottomAnchor.constraint(equalTo: transparentView.bottomAnchor, constant: -15),
-            
-            abstract.bottomAnchor.constraint(equalTo: author.topAnchor, constant: -15),
-            abstract.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
-            abstract.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
-
             headLine.topAnchor.constraint(equalTo: transparentView.topAnchor, constant: 15),
             headLine.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
             headLine.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
+            
+            author.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
+            author.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
+            author.bottomAnchor.constraint(equalTo: transparentView.bottomAnchor, constant: -15),
+            author.heightAnchor.constraint(equalToConstant: 15),
+            
+            publishedAt.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
+            publishedAt.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
+            publishedAt.bottomAnchor.constraint(equalTo: author.topAnchor, constant: -5),
+            publishedAt.heightAnchor.constraint(equalToConstant: 15),
+
+            abstract.bottomAnchor.constraint(equalTo: publishedAt.topAnchor, constant: -25),
+            abstract.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
+            abstract.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
+
+           
             
         ])
     }
