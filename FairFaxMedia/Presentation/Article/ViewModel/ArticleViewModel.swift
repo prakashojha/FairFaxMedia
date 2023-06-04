@@ -9,6 +9,7 @@ import Foundation
 
 class ArticleViewModel{
     
+    private let cachedImage = NSCache<NSString, NSData>()
     private var model: ArticleModel
     let useCaseInteractor: ArticleUseCaseInteractor
     
@@ -26,6 +27,14 @@ class ArticleViewModel{
         }
     }
     
+    func getImageDataFromCache(imageUrl: String)->Data?{
+        return cachedImage.object(forKey: NSString(string: imageUrl)) as? Data
+    }
+    
+    func storeImageDataInCache(data: Data, imageUrl: String){
+        self.cachedImage.setObject(data as NSData, forKey: NSString(string: imageUrl))
+    }
+    
     func getArticleData() async{
         let result: Result<[ArticleEntity], Error> = await useCaseInteractor.executeUseCaseGetArticleData()
         switch(result){
@@ -40,10 +49,17 @@ class ArticleViewModel{
     
     func getArticleImage(index: Int) async -> Data?{
         var imageData: Data?
-        if let imageUrl = self.articleCellModels[index].imageUrl{
+        guard let imageUrl = self.articleCellModels[index].imageUrl else { return imageData}
+        if let data = getImageDataFromCache(imageUrl: imageUrl){
+            imageData = data
+        }
+        else{
             let result: Result<Data?, Error> = await useCaseInteractor.executeUseCaseGetArticleImage(from: imageUrl)
             switch(result){
             case .success(let data):
+                if let data = data {
+                    self.storeImageDataInCache(data: data, imageUrl: imageUrl)
+                }
                 imageData = data
             case .failure(let error):
                 print(error.localizedDescription)
@@ -52,21 +68,38 @@ class ArticleViewModel{
         return imageData
     }
     
+    func formatDate(timeStamp: Int){
+        let timeInterval = TimeInterval(Double(timeStamp))
+        let date = Date(timeIntervalSince1970: timeInterval / 1000)
+        let dateFormater = DateFormatter()
+        dateFormater.timeStyle = .short
+        dateFormater.dateStyle = .long
+        dateFormater.timeZone = TimeZone(identifier: "Australia/Sydney")
+        let dateString = dateFormater.string(from: date)
+       /// print(dateString)
+    }
+    
     func prepareDataForArticleView(articles: [ArticleEntity]) -> [ArticleCellModel]?{
         var articleCellData: [ArticleCellModel] = []
         articles.forEach { article in
             let cellModel = createArticleCellModel(from: article)
             articleCellData.append(cellModel)
         }
+        articleCellData.sort{ $0.timeStamp! > $1.timeStamp! }
+        articleCellData.forEach{
+            formatDate(timeStamp: $0.timeStamp!)
+        }
         return articleCellData
     }
     
     func createArticleCellModel(from articleEntity: ArticleEntity) -> ArticleCellModel{
         var cellModel = ArticleCellModel()
+        cellModel.articleURL = articleEntity.articleURL
         cellModel.headline = articleEntity.headline
         cellModel.abstract = articleEntity.abstract
         cellModel.author = articleEntity.author
         cellModel.imageUrl = articleEntity.articleImages?.first(where: { $0.type == "thumbnail"})?.url ?? ""
+        cellModel.timeStamp = articleEntity.timeStamp
         
         return cellModel
     }
