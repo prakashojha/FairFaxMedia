@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArticleUseCases{
+class ArticleUseCases: ArticleUseCaseInteractor{
     
     let articleDataService: ArticleDataRepo
     
