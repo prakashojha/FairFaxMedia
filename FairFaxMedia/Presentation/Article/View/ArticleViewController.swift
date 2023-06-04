@@ -15,8 +15,9 @@ class ArticleViewController: UIViewController {
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        //collectionView.backgroundColor = .red
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     
@@ -58,7 +59,7 @@ class ArticleViewController: UIViewController {
     
     func setupNavigationBar() {
         
-        navigationItem.title = "Fair Fax"
+        navigationItem.title = "FairFax Media"
         //navigationItem.searchController = searchController
         self.navigationController?.navigationBar.prefersLargeTitles = true
         

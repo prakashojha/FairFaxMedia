@@ -44,7 +44,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         let headLine = UILabel()
         headLine.numberOfLines = 0
         headLine.textAlignment = .left
-        headLine.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        headLine.font = UIFont.systemFont(ofSize: 25, weight: .black)
         headLine.textColor = .white
         return headLine
     }()
@@ -53,7 +53,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         let abstract = UILabel()
         abstract.numberOfLines = 3
         abstract.textAlignment = .left
-        abstract.font = UIFont.systemFont(ofSize: 18)
+        abstract.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         abstract.textColor = .white
         abstract.layer.zPosition = 2
         abstract.lineBreakMode = .byTruncatingTail
@@ -64,7 +64,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         let author = UILabel()
         author.numberOfLines = 0
         author.textAlignment = .right
-        author.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        author.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         author.textColor = .white
         return author
     }()
