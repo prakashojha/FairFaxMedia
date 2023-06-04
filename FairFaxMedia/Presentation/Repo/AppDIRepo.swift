@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol AppDIRepo{
+    func articleViewDependencies()->ArticleViewModel
+}
