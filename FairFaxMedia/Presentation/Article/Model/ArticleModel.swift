@@ -9,4 +9,5 @@ import Foundation
 
 struct ArticleModel{
     var articles: [ArticleEntity] = []
+    var articleCellModels: [ArticleCellModel] = []
 }
