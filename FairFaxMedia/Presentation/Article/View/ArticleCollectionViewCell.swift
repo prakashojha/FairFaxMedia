@@ -119,10 +119,9 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             transparentView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 0),
             transparentView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 0),
             
-            
+            author.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
             author.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
             author.bottomAnchor.constraint(equalTo: transparentView.bottomAnchor, constant: -15),
-            
             
             abstract.bottomAnchor.constraint(equalTo: author.topAnchor, constant: -15),
             abstract.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
