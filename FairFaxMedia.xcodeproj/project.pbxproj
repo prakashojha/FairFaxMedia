@@ -20,6 +20,7 @@
 		0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */; };
 		0650FF2A2A282CBD0009B956 /* FairFaxMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */; };
 		0650FF2C2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */; };
+		06B57FF82A2DAF7900FD01EF /* DataObjectMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B57FF72A2DAF7900FD01EF /* DataObjectMock.swift */; };
 		06B8720D2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8720C2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift */; };
 		06B8720F2A2C16C700C44703 /* RemoteNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8720E2A2C16C700C44703 /* RemoteNetworkService.swift */; };
 		06B872132A2C23B900C44703 /* ArticleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872122A2C23B900C44703 /* ArticleDataModel.swift */; };
@@ -73,6 +74,8 @@
 		0650FF252A282CBD0009B956 /* FairFaxMediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FairFaxMediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITests.swift; sourceTree = "<group>"; };
 		0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0673A34F2A2DCA0600B91418 /* FairFaxMedia.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FairFaxMedia.xctestplan; sourceTree = "<group>"; };
+		06B57FF72A2DAF7900FD01EF /* DataObjectMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectMock.swift; sourceTree = "<group>"; };
 		06B8720C2A2C16A000C44703 /* RemoteNetworkServiceRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkServiceRepo.swift; sourceTree = "<group>"; };
 		06B8720E2A2C16C700C44703 /* RemoteNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkService.swift; sourceTree = "<group>"; };
 		06B872122A2C23B900C44703 /* ArticleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataModel.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 			children = (
 				063ECCD52A2D649400226C71 /* ValidResponse.json */,
 				063ECCD92A2D975900226C71 /* InvalidArticleModel.swift */,
+				06B57FF72A2DAF7900FD01EF /* DataObjectMock.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -154,6 +158,7 @@
 		0650FEFC2A282CBB0009B956 = {
 			isa = PBXGroup;
 			children = (
+				0673A34F2A2DCA0600B91418 /* FairFaxMedia.xctestplan */,
 				0650FF072A282CBB0009B956 /* FairFaxMedia */,
 				0650FF1E2A282CBD0009B956 /* FairFaxMediaTests */,
 				0650FF282A282CBD0009B956 /* FairFaxMediaUITests */,
@@ -572,6 +577,7 @@
 				0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */,
 				063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */,
 				063ECCD02A2D531C00226C71 /* AlertViewModelTests.swift in Sources */,
+				06B57FF82A2DAF7900FD01EF /* DataObjectMock.swift in Sources */,
 				063ECCDA2A2D975900226C71 /* InvalidArticleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,7 +797,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9FYU54DP6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -811,7 +817,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9FYU54DP6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -830,6 +836,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9FYU54DP6;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -848,6 +855,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9FYU54DP6;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dotlight.FairFaxMediaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

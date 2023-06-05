@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "10B17CF4-47E9-4EF9-BCB9-1F9275211ED0",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FairFaxMedia.xcodeproj",
+      "identifier" : "0650FF042A282CBB0009B956",
+      "name" : "FairFaxMedia"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FairFaxMedia.xcodeproj",
+        "identifier" : "0650FF1A2A282CBD0009B956",
+        "name" : "FairFaxMediaTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FairFaxMedia.xcodeproj",
+        "identifier" : "0650FF242A282CBD0009B956",
+        "name" : "FairFaxMediaUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
