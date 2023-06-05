@@ -1,0 +1,50 @@
+
+{
+    "assets" : [
+        {
+            "url" : "www.firstdemourl.co.nz",
+            "headline" : "First Response",
+            "theAbstract": "This is a valid response",
+            "byLine": "Test1",
+            "relatedImages": [
+                {
+                    "url" : "www.firstfakeimageurl-1.co.nz",
+                    "width": 50,
+                    "height": 40,
+                    "type": "thumbnail"
+                },
+                {
+                    "url" : "www.firstfakeimageurl-2.co.nz",
+                    "width": 150,
+                    "height": 140,
+                    "type": "wideLandscape"
+                }
+                
+            ],
+            "timeStamp": 1685519799000
+        },
+        
+        
+        {
+            "url" : "www.seconddemourl.co.nz",
+            "headline" : "Second Response",
+            "theAbstract": "This is a valid response",
+            "byLine": "Test2",
+            "relatedImages": [
+                {
+                    "url" : "www.secondfakeimageurl-1.co.nz",
+                    "width": 250,
+                    "height": 140,
+                    "type": "afrArticleLead"
+                },
+                {
+                    "url" : "www.secondfakeimageurl-2.co.nz",
+                    "width": 60,
+                    "height": 80,
+                    "type": "thumbnail"
+                }
+            ],
+            "timeStamp": 1685563200000
+        },
+    ]
+}

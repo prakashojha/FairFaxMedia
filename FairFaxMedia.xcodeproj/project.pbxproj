@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063ECCD02A2D531C00226C71 /* AlertViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */; };
+		063ECCD32A2D63C500226C71 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCD22A2D63C500226C71 /* URLProtocolMock.swift */; };
+		063ECCD62A2D649400226C71 /* ValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 063ECCD52A2D649400226C71 /* ValidResponse.json */; };
+		063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCD72A2D715D00226C71 /* RemoteNetworkServiceTest.swift */; };
+		063ECCDA2A2D975900226C71 /* InvalidArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCD92A2D975900226C71 /* InvalidArticleModel.swift */; };
 		0650FF092A282CBB0009B956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF082A282CBB0009B956 /* AppDelegate.swift */; };
 		0650FF0B2A282CBB0009B956 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF0A2A282CBB0009B956 /* SceneDelegate.swift */; };
 		0650FF0D2A282CBB0009B956 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF0C2A282CBB0009B956 /* ArticleViewController.swift */; };
@@ -51,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelTests.swift; sourceTree = "<group>"; };
+		063ECCD22A2D63C500226C71 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		063ECCD52A2D649400226C71 /* ValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidResponse.json; sourceTree = "<group>"; };
+		063ECCD72A2D715D00226C71 /* RemoteNetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkServiceTest.swift; sourceTree = "<group>"; };
+		063ECCD92A2D975900226C71 /* InvalidArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidArticleModel.swift; sourceTree = "<group>"; };
 		0650FF052A282CBB0009B956 /* FairFaxMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairFaxMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0650FF082A282CBB0009B956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0650FF0A2A282CBB0009B956 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +116,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		063ECCCD2A2D52B500226C71 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				063ECCD12A2D637500226C71 /* Mock */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		063ECCCE2A2D52C000226C71 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		063ECCD12A2D637500226C71 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				063ECCD42A2D647100226C71 /* MockData */,
+				063ECCD22A2D63C500226C71 /* URLProtocolMock.swift */,
+				063ECCD72A2D715D00226C71 /* RemoteNetworkServiceTest.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		063ECCD42A2D647100226C71 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				063ECCD52A2D649400226C71 /* ValidResponse.json */,
+				063ECCD92A2D975900226C71 /* InvalidArticleModel.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		0650FEFC2A282CBB0009B956 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +187,8 @@
 		0650FF1E2A282CBD0009B956 /* FairFaxMediaTests */ = {
 			isa = PBXGroup;
 			children = (
+				063ECCCE2A2D52C000226C71 /* Presentation */,
+				063ECCCD2A2D52B500226C71 /* Network */,
 				0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */,
 			);
 			path = FairFaxMediaTests;
@@ -477,6 +524,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063ECCD62A2D649400226C71 /* ValidResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +568,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063ECCD32A2D63C500226C71 /* URLProtocolMock.swift in Sources */,
 				0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */,
+				063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */,
+				063ECCD02A2D531C00226C71 /* AlertViewModelTests.swift in Sources */,
+				063ECCDA2A2D975900226C71 /* InvalidArticleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +738,7 @@
 				INFOPLIST_FILE = FairFaxMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -713,6 +766,7 @@
 				INFOPLIST_FILE = FairFaxMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
