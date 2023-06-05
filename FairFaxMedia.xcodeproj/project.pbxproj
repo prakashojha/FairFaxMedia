@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		063ECCD02A2D531C00226C71 /* AlertViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */; };
+		063ECCD02A2D531C00226C71 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCCF2A2D531C00226C71 /* ArticleViewModelTests.swift */; };
 		063ECCD32A2D63C500226C71 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCD22A2D63C500226C71 /* URLProtocolMock.swift */; };
 		063ECCD62A2D649400226C71 /* ValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 063ECCD52A2D649400226C71 /* ValidResponse.json */; };
 		063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063ECCD72A2D715D00226C71 /* RemoteNetworkServiceTest.swift */; };
@@ -57,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelTests.swift; sourceTree = "<group>"; };
+		063ECCCF2A2D531C00226C71 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
 		063ECCD22A2D63C500226C71 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		063ECCD52A2D649400226C71 /* ValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidResponse.json; sourceTree = "<group>"; };
 		063ECCD72A2D715D00226C71 /* RemoteNetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNetworkServiceTest.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		063ECCCE2A2D52C000226C71 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				063ECCCF2A2D531C00226C71 /* AlertViewModelTests.swift */,
+				063ECCCF2A2D531C00226C71 /* ArticleViewModelTests.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 				063ECCD32A2D63C500226C71 /* URLProtocolMock.swift in Sources */,
 				0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */,
 				063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */,
-				063ECCD02A2D531C00226C71 /* AlertViewModelTests.swift in Sources */,
+				063ECCD02A2D531C00226C71 /* ArticleViewModelTests.swift in Sources */,
 				06B57FF82A2DAF7900FD01EF /* DataObjectMock.swift in Sources */,
 				063ECCDA2A2D975900226C71 /* InvalidArticleModel.swift in Sources */,
 			);
