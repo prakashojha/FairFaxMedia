@@ -48,26 +48,21 @@ class ArticleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
-        //configureNavigationBar(largeTitleColor: .white, backgroundColor: .systemGreen, tintColor: .white, title: "About Us", preferredLargeTitle: true)
     }
     
     func setUpViews(){
-        //setupNavigationBar()
         setupCollectionView()
         
     }
     
     func setupNavigationBar() {
         
-        navigationItem.title = "FairFax Media"
-        //navigationItem.searchController = searchController
+        navigationItem.title = viewModel.navigationTitle
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.compactAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        
-        //self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func setupCollectionView(){
@@ -75,7 +70,7 @@ class ArticleViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: "ArticleCollectionViewCell")
+        collectionView.register(ArticleCollectionViewCell.self, forCellWithReuseIdentifier: viewModel.cellReuseIdentifier)
         self.view.addSubview(collectionView)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,11 +100,11 @@ extension ArticleViewController: UICollectionViewDataSource{
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return viewModel.numberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as? ArticleCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellReuseIdentifier, for: indexPath) as? ArticleCollectionViewCell else {
             return UICollectionViewCell()
         }
         let cellForRow = viewModel.cellForAtRow(index: indexPath.row)
@@ -134,7 +129,7 @@ extension ArticleViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let urlString = viewModel.articleCellModels[indexPath.row].articleURL, let url = URL(string: urlString) else {
-            print("invalid url")
+            //print("invalid url")
             return
         }
         loadWebpage(url: url)
@@ -148,7 +143,7 @@ extension ArticleViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return CGFloat(viewModel.minimumLineSpacingForSection)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

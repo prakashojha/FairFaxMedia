@@ -21,6 +21,18 @@ class ArticleViewModel{
         self.useCaseInteractor = useCaseInteractor
     }
     
+    /// Sets the number of section in collection view layout
+    let numberOfSections: Int = 1
+    
+    ///  Sets the name for the reuse identifier to make cells recyclable
+    let cellReuseIdentifier: String = "ArticleCollectionViewCell"
+    
+    ///  Set spacing between two cells
+    let minimumLineSpacingForSection: Int = 5
+    
+    /// Tile of the navigation bar
+    let navigationTitle: String = "FairFax Media"
+    
     /// Collection of data required by Collection View Cell to display.  Data in this array maps directly with the index of CollectionViewCell
     var articleCellModels: [ArticleCellModel]{
         set{
@@ -59,6 +71,7 @@ class ArticleViewModel{
         case .success(let articleEntities):
             if let articleList = prepareDataForArticleView(articles: articleEntities){
                 self.articleCellModels = articleList
+                sortArticleCellData(articleCellModels: &self.articleCellModels)
             }
         case .failure(let error):
             print(error.localizedDescription)
@@ -114,8 +127,14 @@ class ArticleViewModel{
             let cellModel = createArticleCellModel(from: article)
             articleCellData.append(cellModel)
         }
-        articleCellData.sort{ $0.timeStamp! > $1.timeStamp! }
+        //articleCellData.sort{ $0.timeStamp! > $1.timeStamp! }
         return articleCellData
+    }
+    
+    /// Sort cellModel data in ascending order
+    /// - Parameter articleCellModels: array containing `ArticleCellModel`
+    func sortArticleCellData(articleCellModels: inout [ArticleCellModel]){
+        articleCellModels.sort{ $0.timeStamp! > $1.timeStamp! }
     }
     
     /// Create item for a single cell in collection view.
