@@ -35,7 +35,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 0
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.zPosition = 1
         return view
     }()
     
@@ -146,8 +145,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             abstract.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
             abstract.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
 
-           
-            
         ])
     }
 }
