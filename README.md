@@ -1,6 +1,7 @@
 # FairFaxMedia
 A news app to display list of news with images. 
-Uses UICollectionView to display items. Images are loaded asynchronously and cached for another time use
+Uses UICollectionView to display items. Images are loaded asynchronously and cached for another time use.
+When an item is view clicked, respective news url is launched in Safari.
 
 # Requirements
 - XCode 14.3.1
