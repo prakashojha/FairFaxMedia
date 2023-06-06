@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Stores all app related dependencies
+/// Confirm `AppDI` protocol to provide data to Presentation layer
 class AppDI: AppDIRepo{
     
     let environment: AppEnvironment
@@ -17,6 +19,9 @@ class AppDI: AppDIRepo{
     
     static let shared = AppDI(environment: AppEnvironment())
     
+    
+    /// Set Dependencies for ArticleViewModel
+    /// - Returns: ArticleViewModel
     func articleViewDependencies() -> ArticleViewModel {
         let articleDI: ArticleDI = ArticleDI(environment: environment)
         return articleDI.dependencies()

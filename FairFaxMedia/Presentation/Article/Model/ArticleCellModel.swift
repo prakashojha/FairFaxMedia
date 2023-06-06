@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// A model for `ArticleCollectionViewCell`
+/// This model contains data required by a collection view cell to display
+/// This model is populated by `ArticleViewModel` and passed down to `ArticleCollectionViewCell`
 struct ArticleCellModel{
     var articleURL: String?
     var headline: String?

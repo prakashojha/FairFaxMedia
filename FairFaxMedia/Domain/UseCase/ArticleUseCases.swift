@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Use Cases provided by Domain Layer
+/// Use cases are executed by Presentation layer
 class ArticleUseCases: ArticleUseCaseInteractor{
     
     let articleDataService: ArticleDataRepo
@@ -15,6 +17,8 @@ class ArticleUseCases: ArticleUseCaseInteractor{
         self.articleDataService = articleDataService
     }
     
+    ///  Use case to get article data asynchronously from Data Layer
+    /// - Returns:ResultType. `.success([ArticleEntity])`, .`failure(Error)`
     func executeUseCaseGetArticleData() async -> Result<[ArticleEntity], Error>{
         let result: Result<[ArticleEntity], Error>  = await articleDataService.getArticleData()
         switch(result){
@@ -25,6 +29,10 @@ class ArticleUseCases: ArticleUseCaseInteractor{
         }
     }
     
+    
+    /// Use case to get image asynchronously from Data Layer
+    /// - Parameter url: url to fetch image from
+    /// - Returns: ResultType. `.success([Data?])`, .`failure(Error)`
     func executeUseCaseGetArticleImage(from url: String) async -> Result<Data?, Error>{
         let result: Result<Data?, Error> = await articleDataService.getArticleImage(from: url)
         switch(result){

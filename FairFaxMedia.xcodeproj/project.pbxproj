@@ -17,7 +17,6 @@
 		0650FF0D2A282CBB0009B956 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF0C2A282CBB0009B956 /* ArticleViewController.swift */; };
 		0650FF122A282CBC0009B956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0650FF112A282CBC0009B956 /* Assets.xcassets */; };
 		0650FF152A282CBC0009B956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0650FF132A282CBC0009B956 /* LaunchScreen.storyboard */; };
-		0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */; };
 		0650FF2A2A282CBD0009B956 /* FairFaxMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */; };
 		0650FF2C2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */; };
 		06B57FF82A2DAF7900FD01EF /* DataObjectMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B57FF72A2DAF7900FD01EF /* DataObjectMock.swift */; };
@@ -70,7 +69,6 @@
 		0650FF142A282CBC0009B956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0650FF162A282CBC0009B956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0650FF1B2A282CBD0009B956 /* FairFaxMediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FairFaxMediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaTests.swift; sourceTree = "<group>"; };
 		0650FF252A282CBD0009B956 /* FairFaxMediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FairFaxMediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0650FF292A282CBD0009B956 /* FairFaxMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITests.swift; sourceTree = "<group>"; };
 		0650FF2B2A282CBD0009B956 /* FairFaxMediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairFaxMediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			children = (
 				063ECCCE2A2D52C000226C71 /* Presentation */,
 				063ECCCD2A2D52B500226C71 /* Network */,
-				0650FF1F2A282CBD0009B956 /* FairFaxMediaTests.swift */,
 			);
 			path = FairFaxMediaTests;
 			sourceTree = "<group>";
@@ -213,7 +210,6 @@
 			children = (
 				06B8722A2A2C673E00C44703 /* Repo */,
 				06B872062A2C13E600C44703 /* Article */,
-				06B872072A2C141100C44703 /* ArticleDetail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -323,37 +319,6 @@
 				06B872032A2C137900C44703 /* Model */,
 			);
 			path = Article;
-			sourceTree = "<group>";
-		};
-		06B872072A2C141100C44703 /* ArticleDetail */ = {
-			isa = PBXGroup;
-			children = (
-				06B8720A2A2C143400C44703 /* Model */,
-				06B872092A2C142E00C44703 /* ViewModel */,
-				06B872082A2C142700C44703 /* View */,
-			);
-			path = ArticleDetail;
-			sourceTree = "<group>";
-		};
-		06B872082A2C142700C44703 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		06B872092A2C142E00C44703 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		06B8720A2A2C143400C44703 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		06B8720B2A2C167E00C44703 /* RemoteNetworkService */ = {
@@ -574,7 +539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				063ECCD32A2D63C500226C71 /* URLProtocolMock.swift in Sources */,
-				0650FF202A282CBD0009B956 /* FairFaxMediaTests.swift in Sources */,
 				063ECCD82A2D715D00226C71 /* RemoteNetworkServiceTest.swift in Sources */,
 				063ECCD02A2D531C00226C71 /* ArticleViewModelTests.swift in Sources */,
 				06B57FF82A2DAF7900FD01EF /* DataObjectMock.swift in Sources */,

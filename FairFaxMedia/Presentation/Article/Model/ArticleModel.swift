@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Model used by view model to store data
 struct ArticleModel{
     var articles: [ArticleEntity] = []
     var articleCellModels: [ArticleCellModel] = []

@@ -15,7 +15,7 @@ class ArticleDI{
         self.environment = environment
     }
     
-    ///  Manage Dependencies
+    ///  Manage Dependencies required by ArticleViewController
     /// - Returns: A View Model for ArticleViewController
     func dependencies()->ArticleViewModel {
         let remoteNetworkService: RemoteNetworkServiceRepo = RemoteNetworkService(urlString: environment.baseURL)

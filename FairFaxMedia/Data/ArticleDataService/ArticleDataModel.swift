@@ -7,6 +7,14 @@
 
 import Foundation
 
+/*
+ 
+ This is a data model provided to Network Service.
+ Network Service will make network call and decodes received data into this model.
+ This model is provided to Network Service by Data layer.
+ 
+ */
+
 struct RelatedImage: Decodable{
     var url: String?
     var width: Int?
@@ -31,6 +39,9 @@ struct Asset: Decodable{
         case timeStamp = "timeStamp"
     }
     
+    
+    /// A Data Transfer Object. Data layer creates `ArticleEntity` model for Domain layer from current model.
+    /// - Returns: ArticleEntity
     func articleEntityDTO()->ArticleEntity{
         return ArticleEntity(
             articleURL:  self.articleURL,

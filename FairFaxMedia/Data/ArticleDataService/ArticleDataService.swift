@@ -9,6 +9,7 @@ import Foundation
 
 class ArticleDataService: ArticleDataRepo{
     
+    /// Network Service used by DataLayer
     var remoteNetworkService: RemoteNetworkServiceRepo
     
     init(remoteNetworkService: RemoteNetworkServiceRepo){
@@ -16,6 +17,8 @@ class ArticleDataService: ArticleDataRepo{
     }
     
     
+    /// Fetch data asynchronously over the network
+    /// - Returns: Result Type. OnSuccess returns `[ArticleEntity]`.On Failure returns` Error`
     func getArticleData() async -> Result<[ArticleEntity], Error>{
         var articleEntities: [ArticleEntity] = []
         let result: Result<ArticleDataModel, Error> = await remoteNetworkService.requestRemoteData()
@@ -32,6 +35,9 @@ class ArticleDataService: ArticleDataRepo{
         }
     }
     
+    /// Fetch image asynchronously over the network.
+    /// - Parameter url: url to fetch image from
+    /// - Returns: ResultType. OnSuccess return `Data?` . OnFailure returns `Error`
     func getArticleImage(from url: String) async -> Result<Data?, Error>{
         let result: Result<Data?, Error> = await self.remoteNetworkService.fetchImage(from: url)
         switch(result){

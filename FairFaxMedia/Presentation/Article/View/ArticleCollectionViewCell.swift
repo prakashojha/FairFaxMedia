@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// A UICollectionViewCell used to represent an item in UICollectionView
 class ArticleCollectionViewCell: UICollectionViewCell {
     
+    /// View is populated with data on main thread
     var cellViewModel: ArticleCellModel?{
         didSet{
             Task { @MainActor in
@@ -20,6 +22,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    /// image is loaded asynchronously and loaded when available on main thread
     var imageData: Data?{
         didSet{
             if let imageData = imageData{
@@ -30,6 +33,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    /// ImageView to hold thumbnail image
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 0
@@ -38,6 +42,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    /// Holds the title of the article
     private lazy var headLine: UILabel = {
         let headLine = UILabel()
         headLine.numberOfLines = 0
@@ -47,6 +52,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return headLine
     }()
     
+    /// Holds the abstract of the article. Clipped when more than 3 lines
     private lazy var abstract: UILabel = {
         let abstract = UILabel()
         abstract.numberOfLines = 3
@@ -58,6 +64,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return abstract
     }()
     
+    /// Holds the byLine of the article
     private lazy var author: UILabel = {
         let author = UILabel()
         author.numberOfLines = 0
@@ -67,6 +74,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return author
     }()
     
+    ///  Shows the Long Date when article  was published e.g. `May 31, 2023`
     private lazy var publishedAt: UILabel = {
         let publishedAt = UILabel()
         publishedAt.numberOfLines = 0
@@ -76,6 +84,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return publishedAt
     }()
     
+    ///  This view is added on ImageView to add some opacity to ImageView to make texts more visible.
     private lazy var transparentView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -92,6 +101,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// Setting up all the view
     func setupViews(){
         self.addSubview(imageView)
         imageView.addSubview(transparentView)
@@ -108,6 +118,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
+    /// Setting constraints on the views 
     func setupConstraints(){
         imageView.translatesAutoresizingMaskIntoConstraints = false
         transparentView.translatesAutoresizingMaskIntoConstraints = false

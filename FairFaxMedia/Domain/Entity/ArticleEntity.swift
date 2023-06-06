@@ -7,6 +7,13 @@
 
 import Foundation
 
+/*
+    A model provide to Data Layer
+    Domain layer expects data to be object of this model
+ */
+
+
+/// Images associated with every article
 struct ArticleImage{
     var url: String?
     var width: Int?
@@ -21,6 +28,7 @@ struct ArticleImage{
     }
 }
 
+/// Detail of every article
 struct ArticleEntity{
     var articleURL: String?
     var headline: String?
