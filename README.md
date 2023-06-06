@@ -16,16 +16,20 @@
 - Contains app level data e.g. environment, resources, dependencies etc.
 ## CORE
 - Contains Network Service to make Network/API calls
+- Adopt and confirms to `RemoteNetworkServiceRepo`
 ## PRESENTATION
-- Contains UI and ViewModels
+- Contains Views, models and ViewModels.
 - ViewModels use the services of Domain layer to fetch data and update UI
-- Uses interactor to interact with Domain layer
+- Uses `ArticleUseCaseInteractor` to interact with Domain layer
 ## DOMAIN
 - Independent layer
-- Exposes Repo to be implemented by Data Later to provide data to domain layer.
-- Implenets UserInteractor to interact with Presentation layer.
+- Contain all the business use cases `ArticleUseCases`
+- Exposes `ArticleDataRepo` to be implemented by Data Layer.
+- Adopt and confirms to `ArticleUseCaseInteractor` Repo.
 ## DATA
-- Usees the serice of Network/Core layer to get data
-- Provides Network Service a model to decode downloaded data into.
-- Pass data back to Domain layer in the required model.
+- Uses `RemoteNetworkService` from Core layer to get data from network.
+- Provides `RemoteNetworkService` a model, `ArticleDataModel` to decode downloaded data into.
+- Transforms data from `ArticleDataModel` model to `ArticleEntity` model
+- Pass `ArticleEntity` model back to Domain layer.
+- Adoppt and confirms to `ArticleDataRepo` exposed by Domain Layer.
 
