@@ -23,7 +23,6 @@ Uses UICollectionView to display items. Images are loaded asynchronously and cac
 - Contains Views, models and ViewModels.
 - ViewModels use the services of Domain layer to fetch data and update UI
 - Uses `ArticleUseCaseInteractor` to interact with Domain layer
-- Cache image data to avoid 
 ## DOMAIN
 - Independent layer
 - Contain all the business use cases `ArticleUseCases`
