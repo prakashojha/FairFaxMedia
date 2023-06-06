@@ -12,7 +12,7 @@ Uses UICollectionView to display items. Images are loaded asynchronously and cac
 - SOLID principles
 
 # Project Structure
-<img width="251" alt="Screenshot 2023-06-06 at 4 55 41 PM" src="https://github.com/prakashojha/FairFaxMedia/assets/8487111/0a703e6a-073a-46fb-87ba-380212469a98">
+<img width="251" alt="Screenshot 2023-06-06 at 4 55 41 PM" src="https://github.com/prakashojha/FairFaxMedia/assets/8487111/3f500539-4dee-4bbc-8bc0-352d459c70b6">
 
 ## APP
 - Contains app level data e.g. environment, resources, dependencies etc.
@@ -40,5 +40,5 @@ Uses UICollectionView to display items. Images are loaded asynchronously and cac
 - Activity controller displaying load of data
 - Pull to refresh
 - Pagination
-- Image placeholder or ansynchronous image load
+- Image placeholder for ansynchronous image load
 
