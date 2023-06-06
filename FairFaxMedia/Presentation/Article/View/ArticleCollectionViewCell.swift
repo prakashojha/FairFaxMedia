@@ -134,11 +134,11 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             author.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
             author.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
             author.bottomAnchor.constraint(equalTo: transparentView.bottomAnchor, constant: -15),
-            author.heightAnchor.constraint(equalToConstant: 15),
+            author.heightAnchor.constraint(equalToConstant: 25),
             
             publishedAt.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor, constant: 15),
             publishedAt.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor, constant: -15),
-            publishedAt.bottomAnchor.constraint(equalTo: author.topAnchor, constant: -5),
+            publishedAt.bottomAnchor.constraint(equalTo: author.topAnchor, constant: -1),
             publishedAt.heightAnchor.constraint(equalToConstant: 15),
 
             abstract.bottomAnchor.constraint(equalTo: publishedAt.topAnchor, constant: -25),
