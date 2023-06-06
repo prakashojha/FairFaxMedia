@@ -37,7 +37,7 @@ When an item is view clicked, respective news url is launched in Safari.
 - Adoppt and confirms to `ArticleDataRepo` exposed by Domain Layer.
 
 # Future Implementations
-- Activity controller displaying load of data
+- Activity indicator displaying load of data
 - Pull to refresh
 - Pagination
 - Image placeholder for ansynchronous image load
