@@ -7,13 +7,14 @@
 
 import Foundation
 
+
+/// URLProtocol mocked to be used for mocking network call
 class URLProtocolMock: URLProtocol{
     
     static var data: Data?
     static var failedError: Error?
     static var response: URLResponse?
     
-    //static var mockURLs = [URL?: (error: Error?, data: Data?, response: HTTPURLResponse?)]()
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -29,7 +30,6 @@ class URLProtocolMock: URLProtocol{
     
     override func startLoading() {
         if let _ = request.url {
-            // if let (error, data, response) = URLProtocolMock.mockURLs[url] {
             
             // We have a mock response specified so return it.
             if let responseStrong = URLProtocolMock.response {
@@ -45,7 +45,6 @@ class URLProtocolMock: URLProtocol{
             if let errorStrong = URLProtocolMock.failedError {
                 self.client?.urlProtocol(self, didFailWithError: errorStrong)
             }
-            //}
         }
         
         // Send the signal that we are done returning our mock response

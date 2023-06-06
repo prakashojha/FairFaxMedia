@@ -16,6 +16,7 @@ final class RemoteNetworkServiceTest: XCTestCase {
     var expectation: XCTestExpectation!
     var sut: RemoteNetworkService!
     
+    /// initialise with initial values.
     override func setUpWithError() throws {
         config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
@@ -30,6 +31,10 @@ final class RemoteNetworkServiceTest: XCTestCase {
         sut = nil
     }
     
+    
+    /// Returns Data object for a given json file
+    /// - Parameter resource: a json file in bundle
+    /// - Returns: Option Data object
     private func getJSONData(from resource: String)->Data?{
         var data: Data?
         if let file = Bundle(for: type(of: self)).url(forResource: resource, withExtension: "json") {
@@ -38,15 +43,15 @@ final class RemoteNetworkServiceTest: XCTestCase {
         return data
     }
     
-    func testRemoteNetworkService_WhenGivenSuccessfulResponse_ReturnsSuccess(){
+    /// For a valid network call a valid data and response is expected
+    func test_getArticleData_WhenGivenValidDataAndResponse_ReturnsSuccess(){
         
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 200, httpVersion: nil, headerFields: nil)
-        let error: Error? = nil
         let data = getJSONData(from: "ValidResponse")
         
-        URLProtocolMock.failedError = error
+       
         URLProtocolMock.data = data
         URLProtocolMock.response = response
         
@@ -65,7 +70,9 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 2)
     }
     
-    func testRemoteNetworkService_WhenInvalidURLStringProvided_ReturnsError(){
+    /// For an invalid URL, `NetworkError.InvalidURL` error is expected
+    func test_getArticleData_WhenInvalidURLStringProvided_ReturnsError(){
+        
         // Arrange
         
         let failedError: Error? = NetworkError.InvalidURL
@@ -85,7 +92,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 2)
     }
     
-    func testRequestRemoteData_WhenNetworkErrorProvided_ReturnsError(){
+    /// For a network error, `NetworkError.Unknown` error is expected
+    func test_getArticleData_WhenNetworkErrorProvided_ReturnsError(){
         // Arrange
       
         let failedError: Error? = NetworkError.Unknown
@@ -107,7 +115,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 2)
     }
     
-    func testRemoteNetworkService_WhenEmptyURLStringProvided_ReturnsError(){
+    /// For an empty URL, `NetworkError.InvalidURL` error is expected
+    func test_getArticleData_WhenEmptyURLStringProvided_ReturnsError(){
         // Arrange
         
         let failedError: Error? = NetworkError.InvalidURL
@@ -127,7 +136,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testRemoteNetworkService_WhenNoResponseProvided_ReturnsError(){
+    /// Check if the response if of type `HTTPURLResponse`, otherwise throw `NetworkError.NoResponse` error
+    func test_getArticleData_WhenWrongURLResponseProvided_ReturnsError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response: URLResponse? =  URLResponse(url: mockUrl, mimeType: "application/json", expectedContentLength: -1, textEncodingName: nil)
@@ -150,7 +160,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testRemoteNetworkService_WhenWrongModelProvided_ReturnsDecodeError(){
+    ///NetworkService download data from API call and decodes it as per the provided model. When wrong model is provided throws error `NetworkError.DecodeError`
+    func test_getArticleData_WhenWrongModelProvided_ReturnsDecodeError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 200, httpVersion: nil, headerFields: nil)
@@ -176,7 +187,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testRemoteNetworkService_WhenUnAuthorisedStatusCodeProvided_ReturnsUnauthorisedError(){
+    ///For Unauthorised status code response (401), error `NetworkError.Unauthorised` is thrown
+    func test_getArticleData_WhenUnAuthorisedStatusCodeProvided_ReturnsUnauthorisedError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 401, httpVersion: nil, headerFields: nil)
@@ -202,7 +214,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testRemoteNetworkService_WhenUnexpectedStatusCodeProvided_ReturnsUnauthorisedError(){
+    /// For Unexpected response, error `NetworkError.UnexpectedStatusCode` is thrown
+    func test_getArticleData_WhenUnexpectedStatusCodeProvided_ReturnsUnauthorisedError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 520, httpVersion: nil, headerFields: nil)
@@ -230,8 +243,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
     
     
     
-    ///TEST:  For valid string, tests for valid data
-    func testFetchImage_WhenProvidedValidUrl_ReturnsSuccess(){
+    ///When a valid string is provided a valid data of type `Data` is expected
+    func test_fetchImage_WhenProvidedValidUrl_ReturnsSuccess(){
         
         // Arrange
         let mockUrl = URL(string: urlString)!
@@ -262,8 +275,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    ///TEST:  For valid string, tests for nil data when image not found
-    func testFetchImage_WhenProvidedInValidUrl_ReturnsFailure(){
+    ///When fetching image for invalid URL , error `NetworkError.InvalidURL` is thrown
+    func test_fetchImage_WhenProvidedInValidUrl_ReturnsFailure(){
         
         // Arrange
         let urlStr = "ww?%\"w"
@@ -284,7 +297,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 2)
     }
     
-    func testFetchImage_WhenEmptyURLStringProvided_ReturnsError(){
+    /// When fetching image using empty URL, error `NetworkError.InvalidURL` is thrown/expected
+    func test_fetchImage_WhenEmptyURLStringProvided_ReturnsError(){
         // Arrange
         
         let failedError: Error? = NetworkError.InvalidURL
@@ -304,7 +318,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testFetchImage_WhenNetworkErrorProvided_ReturnsError(){
+    /// When fetching an image, when network error occurs error of type `NetworkError.Unknown` is expected
+    func test_fetchImage_WhenNetworkErrorProvided_ReturnsError(){
         // Arrange
       
         let failedError: Error? = NetworkError.Unknown
@@ -326,7 +341,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 2)
     }
     
-    func testFetchImage_WhenWrongResponseProvided_ReturnsError(){
+    ///When fetching an image, when wrong response arrives an error of type `NetworkError.NoResponse` is expected
+    func test_fetchImage_WhenWrongResponseProvided_ReturnsError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response: URLResponse? =  URLResponse(url: mockUrl, mimeType: "application/json", expectedContentLength: -1, textEncodingName: nil)
@@ -349,7 +365,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testFetchImage_WhenUnAuthorisedStatusCodeProvided_ReturnsUnauthorisedError(){
+    /// When fetching an image, when unauthorised status code in  response is received then an error of type `NetworkError.Unauthorised` is expected
+    func test_fetchImage_WhenUnAuthorisedStatusCodeProvided_ReturnsUnauthorisedError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 401, httpVersion: nil, headerFields: nil)
@@ -376,7 +393,8 @@ final class RemoteNetworkServiceTest: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    func testFetchImage_WhenUnexpectedStatusCodeProvided_ReturnsUnauthorisedError(){
+    /// When fetching an image, when unexpected status code in  response is received then an error of type `NetworkError.UnexpectedStatusCode` is expected
+    func test_fetchImage_WhenUnexpectedStatusCodeProvided_ReturnsUnauthorisedError(){
         // Arrange
         let mockUrl = URL(string: urlString)!
         let response = HTTPURLResponse(url: mockUrl, statusCode: 520, httpVersion: nil, headerFields: nil)

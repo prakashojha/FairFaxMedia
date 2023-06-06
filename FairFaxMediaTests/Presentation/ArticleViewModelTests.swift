@@ -8,6 +8,8 @@
 import XCTest
 @testable import FairFaxMedia
 
+/// Mock ArticleUseCaseInteractor used by ArticleViewModel
+///  Current only being used as placeholder
 final class ArticleUseCasesMock: ArticleUseCaseInteractor{
     func executeUseCaseGetArticleData() async -> Result<[FairFaxMedia.ArticleEntity], Error> {
         return .success([ArticleEntity()])
@@ -21,12 +23,12 @@ final class ArticleUseCasesMock: ArticleUseCaseInteractor{
 
 final class AlertViewModelTests: XCTestCase {
     
+    
     var sut: ArticleViewModel!
     var articleUseCaseInteractor: ArticleUseCaseInteractor!
    
-    
-    
     override func setUpWithError() throws {
+        /// initialise
         articleUseCaseInteractor = ArticleUseCasesMock()
         sut = ArticleViewModel(model: ArticleModel(), useCaseInteractor: articleUseCaseInteractor)
         
@@ -37,7 +39,10 @@ final class AlertViewModelTests: XCTestCase {
         sut = nil
     }
     
-    func test_cache_data_storage(){
+    /// Test Cache Memory
+    /// Data is stored in cache and after waiting for 5 seconds, its retrieved from cache
+    /// On success, same data is retrieved.
+    func test_storeImageDataInCache_WhenDataStoredInCache_RetrievalSuccess(){
         // Arrange
         let url: String = "www.fakeurl.com"
         let data: Data = "Fake Data".data(using: .utf8)!
@@ -52,7 +57,9 @@ final class AlertViewModelTests: XCTestCase {
         XCTAssertEqual(dataFromcache, data)
     }
     
-    func test_formatDate_return_longDatFormat_when_ticksProvided(){
+    
+    /// Change time format from ticks to LongDateFormat
+    func test_formatDate_WhenTicksProvided_ReturnLongDatFormat(){
         
         //Arrange
         let ticks = 1685519799000
@@ -65,7 +72,8 @@ final class AlertViewModelTests: XCTestCase {
         XCTAssertEqual(expectedDate, receivedDate)
     }
     
-    func test_articleCellModel_create_articleCellModel_from_articleEntity(){
+    /// An ArticleCellModel is obtained from ArticleEntity
+    func test_articleCellModel_WhenArticleEntityProvided_ReturnArticleCellModel(){
         // Arrange
        
         let articleEntity: ArticleEntity = ArticleEntity( articleURL: "urltoarticle1", headline: "headline1", abstract: "abstract1",author: "test1",
@@ -82,7 +90,9 @@ final class AlertViewModelTests: XCTestCase {
         XCTAssertEqual(cellModel.localPublishTime!, "May 31, 2023")
     }
     
-    func test_prepareDataForArticleView_returns_articleCellModels_from_articleEntities(){
+    
+    ///  ArticleCellModel array is obtained from given ArticleEntity Array
+    func test_prepareDataForArticleView_WhenArticleEntityArrayProvided_ReturnArticleCellModelArray(){
         let articleEntities: [ArticleEntity] = [
             ArticleEntity( articleURL: "urltoarticle1", headline: "headline1", abstract: "abstract1",author: "test1",
                            articleImages: [
@@ -106,7 +116,9 @@ final class AlertViewModelTests: XCTestCase {
         XCTAssertEqual(articleCellModels![0].timeStamp, 1685519799000)
     }
     
-    func test_cellForAtRow_returns_cellModel_at_index(){
+    
+    ///  Get an item from array of ArticleCellModel at a given index.
+    func test_cellForAtRow_WhenIndexProvided_ReturnCellModelAtThatIndex(){
         //Arrange
         let articleCellModels: [ArticleCellModel] = [
             ArticleCellModel(articleURL: "url", headline: "headline", abstract: "abstract", author: "Test1", imageUrl: "fakeurl", timeStamp: 1685519799000, localPublishTime: "31 May, 2023"),
@@ -116,7 +128,6 @@ final class AlertViewModelTests: XCTestCase {
         sut.articleCellModels = articleCellModels
         
         //Act
-
         let cell = sut.cellForAtRow(index: 0)
         
         //Assert
@@ -124,9 +135,10 @@ final class AlertViewModelTests: XCTestCase {
         
     }
     
-    func test_cellForAtRow_returns_cellModelEmpty_at_invalidIndex(){
+    ///  For invalid index, an empty cell model is expected. Values in empty cellModel is nil
+    func test_cellForAtRow_WhenInvalidIndexProvided_ReturnEmptyCellModel(){
         //Arrange
-        sut.articleCellModels = []
+        sut.articleCellModels = []  //Empty the array. It might get populate from previous tests
         let articleCellModels: [ArticleCellModel] = [
             ArticleCellModel(articleURL: "url", headline: "headline", abstract: "abstract", author: "Test1", imageUrl: "fakeurl", timeStamp: 1685519799000, localPublishTime: "31 May, 2023"),
             ArticleCellModel(articleURL: "url", headline: "headline", abstract: "abstract", author: "Test1", imageUrl: "fakeurl", timeStamp: 1685563200000, localPublishTime: "1 June, 2023"),
@@ -135,14 +147,10 @@ final class AlertViewModelTests: XCTestCase {
         sut.articleCellModels = articleCellModels
         
         //Act
-
         let cell = sut.cellForAtRow(index: 2)
         
         //Assert
         XCTAssertNil(cell.timeStamp)
         
     }
-    
-    
-    
 }
