@@ -26,6 +26,6 @@
 - Implenets UserInteractor to interact with Presentation layer.
 ## DATA
 - Usees the serice of Network/Core layer to get data
-- Provides Network Service with a model to decode into.
+- Provides Network Service a model to decode downloaded data into.
 - Pass data back to Domain layer in the required model.
 
