@@ -1,4 +1,6 @@
 # FairFaxMedia
+A news app to display list of news with images. 
+Uses UICollectionView to display items. Images are loaded asynchronously and cached for another time use
 
 # Requirements
 - XCode 14.3.1
@@ -21,6 +23,7 @@
 - Contains Views, models and ViewModels.
 - ViewModels use the services of Domain layer to fetch data and update UI
 - Uses `ArticleUseCaseInteractor` to interact with Domain layer
+- Cache image data to avoid 
 ## DOMAIN
 - Independent layer
 - Contain all the business use cases `ArticleUseCases`
@@ -32,4 +35,10 @@
 - Transforms data from `ArticleDataModel` model to `ArticleEntity` model
 - Pass `ArticleEntity` model back to Domain layer.
 - Adoppt and confirms to `ArticleDataRepo` exposed by Domain Layer.
+
+# Future Implementations
+- Activity controller displaying load of data
+- Pull to refresh
+- Pagination
+- Image placeholder or ansynchronous image load
 
